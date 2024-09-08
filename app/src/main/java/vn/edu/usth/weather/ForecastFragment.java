@@ -1,12 +1,16 @@
 package vn.edu.usth.weather;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,7 +62,22 @@ public class ForecastFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragment_forecast, container, false);
+        v.setBackgroundColor(Color.parseColor("#add8e6"));
+
+        TextView tv = new TextView(getContext());
+        String day = "Weather Forecast";
+        tv.setText(day);
+        tv.setGravity(Gravity.CENTER);
+        tv.setBackgroundColor(Color.CYAN);
+
+        LinearLayout linearLayout = new LinearLayout(getContext());
+        linearLayout.setOrientation(LinearLayout.VERTICAL);
+        linearLayout.addView(tv);
+        linearLayout.addView(v);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_forecast, container, false);
+        return linearLayout;
     }
+
+
 }

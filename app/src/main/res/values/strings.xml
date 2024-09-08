@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">My Application</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+    <string name="cloudy_weather">25^C - 27^C</string>
+    <string name="rainy_weather">24^C - 27^C</string>
+    <string name="sunny_weather">27^C - 30^C</string>
+    <string name="windy_weather">24^C - 26^C</string>
 </resources>
