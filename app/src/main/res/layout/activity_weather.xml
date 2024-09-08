@@ -14,11 +14,25 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
-    <fragment
-        android:id="@+id/fragment_forecast"
-        android:name="vn.edu.usth.weather.ForecastFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/TextMain"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@string/main_text"
+            android:textColor="#1E64B5"
+            android:textSize="30sp"
+            android:background="#E7EBEF"/>
+        <fragment
+            android:id="@+id/fragment_weather"
+            android:name="vn.edu.usth.weather.WeatherFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <fragment
+            android:id="@+id/fragment_forecast"
+            android:name="vn.edu.usth.weather.ForecastFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

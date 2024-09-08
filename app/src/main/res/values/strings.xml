@@ -13,4 +13,14 @@
     <string name="rainy_weather">24^C - 27^C</string>
     <string name="sunny_weather">27^C - 30^C</string>
     <string name="windy_weather">24^C - 26^C</string>
+    <string name="main_text">Weather Forecast</string>
+    <string name="location_1">Hanoi</string>
+    <string name="location_2">Washington DC</string>
+    <string name="location_3">Tokyo</string>
+    <string name="degree_location_1">25^C</string>
+    <string name="degree_location_2">21^C</string>
+    <string name="degree_location_3">23^C</string>
+    <string name="weather_location_1">Cloudy</string>
+    <string name="weather_location_2">Rainy</string>
+    <string name="weather_location_3">Cloudy</string>
 </resources>
