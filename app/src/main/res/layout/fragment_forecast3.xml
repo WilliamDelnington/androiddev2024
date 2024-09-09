@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="5dp"
-    android:background="#B6CCDF"
-    tools:context=".ForecastFragment">
+    android:background="#B9E1E6"
+    tools:context=".ForecastFragment3">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!--Fragment which exhibits Hanoi's Monday weather-->
+        <!--Fragment which exhibits Tokyo's Monday weather-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="63dp"
@@ -34,19 +34,19 @@
                 android:layout_weight="1"
                 android:scaleX="1"
                 android:scaleY="1"
-                android:src="@drawable/cloudy"
+                android:src="@drawable/day_partial_cloud"
                 android:contentDescription="@null"/>
-            
+
             <TextView
                 android:id="@+id/textView1_2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="@string/tropical_cloudy_weather" />
+                android:text="@string/tropical_sunny_and_cloudy_weather" />
         </LinearLayout>
 
-        <!--Fragment which exhibits Hanoi's Tuesday weather-->
+        <!--Fragment which exhibits Tokyo's Tuesday weather-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="63dp"
@@ -59,7 +59,7 @@
                 android:gravity="center"
                 android:layout_weight="1"
                 android:text="@string/tuesday" />
-            
+
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="82dp"
@@ -67,7 +67,7 @@
                 android:layout_weight="1"
                 android:scaleX="1"
                 android:scaleY="1"
-                android:src="@drawable/rain"
+                android:src="@drawable/day_clear"
                 android:contentDescription="@null"/>
 
             <TextView
@@ -76,10 +76,10 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="@string/tropical_rainy_weather" />
+                android:text="@string/tropical_sunny_weather" />
         </LinearLayout>
 
-        <!--Fragment which exhibits Hanoi's Wednesday weather-->
+        <!--Fragment which exhibits Tokyo's Wednesday weather-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="63dp"
@@ -100,7 +100,7 @@
                 android:layout_weight="1"
                 android:scaleX="1"
                 android:scaleY="1"
-                android:src="@drawable/cloudy"
+                android:src="@drawable/day_clear"
                 android:contentDescription="@null"/>
 
             <TextView
@@ -109,10 +109,10 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="@string/tropical_cloudy_weather" />
+                android:text="@string/tropical_sunny_weather" />
         </LinearLayout>
 
-        <!--Fragment which exhibits Hanoi's Thursday weather-->
+        <!--Fragment which exhibits Tokyo's Thursday weather-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="63dp"
@@ -133,7 +133,7 @@
                 android:layout_weight="1"
                 android:scaleX="1"
                 android:scaleY="1"
-                android:src="@drawable/day_clear"
+                android:src="@drawable/cloudy"
                 android:contentDescription="@null"/>
 
             <TextView
@@ -142,10 +142,10 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="@string/tropical_sunny_weather" />
+                android:text="@string/tropical_cloudy_weather" />
         </LinearLayout>
 
-        <!--Fragment which exhibits Hanoi's Friday weather-->
+        <!--Fragment which exhibits Tokyo's Friday weather-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="63dp"
@@ -175,10 +175,10 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="@string/tropical_sunny_weather" />
+                android:text="@string/tropical_sunny_and_cloudy_weather" />
         </LinearLayout>
 
-        <!--Fragment which exhibits Hanoi's Saturday weather-->
+        <!--Fragment which exhibits Saturday weather-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="63dp"
@@ -199,7 +199,7 @@
                 android:layout_weight="1"
                 android:scaleX="1"
                 android:scaleY="1"
-                android:src="@drawable/rain"
+                android:src="@drawable/day_partial_cloud"
                 android:contentDescription="@null"/>
 
             <TextView
@@ -208,10 +208,10 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="@string/tropical_rainy_weather" />
+                android:text="@string/tropical_sunny_and_cloudy_weather" />
         </LinearLayout>
 
-        <!--Fragment which exhibits Hanoi's Sunday weather-->
+        <!--Layout which exhibits Hanoi's Sunday weather-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="63dp"
@@ -232,7 +232,7 @@
                 android:layout_weight="1"
                 android:scaleX="1"
                 android:scaleY="1"
-                android:src="@drawable/cloudy"
+                android:src="@drawable/wind"
                 android:contentDescription="@null"/>
 
             <TextView
@@ -241,7 +241,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="@string/tropical_cloudy_weather" />
+                android:text="@string/tropical_windy_weather" />
         </LinearLayout>
     </LinearLayout>
 

@@ -2,6 +2,8 @@
     <string name="app_name">My Application</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Days of the week-->
     <string name="monday">Monday</string>
     <string name="tuesday">Tuesday</string>
     <string name="wednesday">Wednesday</string>
@@ -9,18 +11,35 @@
     <string name="friday">Friday</string>
     <string name="saturday">Saturday</string>
     <string name="sunday">Sunday</string>
-    <string name="cloudy_weather">25^C - 27^C</string>
-    <string name="rainy_weather">24^C - 27^C</string>
-    <string name="sunny_weather">27^C - 30^C</string>
-    <string name="windy_weather">24^C - 26^C</string>
+
+    <!--  Specific weather degree in tropical region  -->
+    <string name="tropical_cloudy_weather">25^C - 27^C</string>
+    <string name="tropical_rainy_weather">24^C - 27^C</string>
+    <string name="tropical_sunny_weather">27^C - 30^C</string>
+    <string name="tropical_windy_weather">24^C - 26^C</string>
+    <string name="tropical_sunny_and_cloudy_weather">26^C - 29^C</string>
+
+    <!--  Specific weather degree in temperate region  -->
+    <string name="temperate_cloudy_weather">12^C - 18^C</string>
+    <string name="temperate_rainy_weather">11^C - 17^C</string>
+    <string name="temperate_sunny_weather">16^C - 22^C</string>
+    <string name="temperate_windy_weather">10^C - 15^C</string>
+    <string name="temperate_sunny_and_cloudy_weather">14^C - 20^C</string>
+
     <string name="main_text">Weather Forecast</string>
+
+    <!--  Specific regions  -->
     <string name="location_1">Hanoi</string>
-    <string name="location_2">Washington DC</string>
+    <string name="location_2">London</string>
     <string name="location_3">Tokyo</string>
+
+    <!--  Current weather degree  -->
     <string name="degree_location_1">25^C</string>
-    <string name="degree_location_2">21^C</string>
-    <string name="degree_location_3">23^C</string>
-    <string name="weather_location_1">Cloudy</string>
-    <string name="weather_location_2">Rainy</string>
-    <string name="weather_location_3">Cloudy</string>
+    <string name="degree_location_2">13^C</string>
+    <string name="degree_location_3">24^C</string>
+
+    <!--  Current weather state  -->
+    <string name="cloudy">Cloudy</string>
+    <string name="rainy">Rainy</string>
+    <string name="sunny">Sunny</string>
 </resources>

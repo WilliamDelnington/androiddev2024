@@ -4,16 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".WeatherFragment">
+    tools:context=".WeatherFragment2">
 
     <!-- TODO: Update blank fragment layout -->
+    <!-- Representing London's current weather -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#B9CFBA">
         <!--Main Image-->
         <ImageView
-            android:id="@+id/imageViewMain"
+            android:id="@+id/imageViewMain2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
@@ -24,23 +25,23 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/textViewDegree"
+                android:id="@+id/textViewDegree2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/degree_location_1"/>
+                android:text="@string/degree_location_2"/>
             <TextView
-                android:id="@+id/textViewWeatherContent"
+                android:id="@+id/textViewWeatherContent2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/cloudy" />
+                android:text="@string/rainy" />
         </LinearLayout>
-        
+
         <TextView
-            android:id="@+id/textViewLocation"
+            android:id="@+id/textViewLocation2"
             android:layout_width="81dp"
             android:layout_height="41dp"
             android:layout_alignParentRight="true"
-            android:text="@string/location_1"/>
+            android:text="@string/location_2"/>
 
     </RelativeLayout>
 

@@ -23,16 +23,14 @@
             android:textColor="#1E64B5"
             android:textSize="30sp"
             android:background="#E7EBEF"/>
-        <fragment
-            android:id="@+id/fragment_weather"
-            android:name="vn.edu.usth.weather.WeatherFragment"
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/pager"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <fragment
-            android:id="@+id/fragment_forecast"
-            android:name="vn.edu.usth.weather.ForecastFragment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent">
+
+        </androidx.viewpager.widget.ViewPager>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
