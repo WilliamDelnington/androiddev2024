@@ -19,28 +19,32 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_alignParentBottom="false"
-            android:background="@drawable/cloudy"/>
+            android:background="@drawable/rain"/>
         <LinearLayout
-            android:layout_width="86dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/textViewDegree2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/degree_location_2"/>
+                android:text="@string/degree_location_2"
+                android:textSize="25sp"/>
             <TextView
                 android:id="@+id/textViewWeatherContent2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/rainy" />
+                android:text="@string/rainy_vietnamese"
+                android:textSize="25sp"/>
         </LinearLayout>
 
         <TextView
             android:id="@+id/textViewLocation2"
-            android:layout_width="81dp"
-            android:layout_height="41dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:textSize="25sp"
+            android:gravity="end"
             android:text="@string/location_2"/>
 
     </RelativeLayout>

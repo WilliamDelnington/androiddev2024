@@ -12,6 +12,15 @@
     <string name="saturday">Saturday</string>
     <string name="sunday">Sunday</string>
 
+    <!--  Days of the week in Vietnamese  -->
+    <string name="monday_vietnamese">Thứ hai</string>
+    <string name="tuesday_vietnamese">Thứ ba</string>
+    <string name="wednesday_vietnamese">Thứ tư</string>
+    <string name="thursday_vietnamese">Thứ năm</string>
+    <string name="friday_vietnamese">Thứ sáu</string>
+    <string name="saturday_vietnamese">Thứ bảy</string>
+    <string name="sunday_vietnamese">Chủ nhật</string>
+
     <!--  Specific weather degree in tropical region  -->
     <string name="tropical_cloudy_weather">25^C - 27^C</string>
     <string name="tropical_rainy_weather">24^C - 27^C</string>
@@ -42,4 +51,11 @@
     <string name="cloudy">Cloudy</string>
     <string name="rainy">Rainy</string>
     <string name="sunny">Sunny</string>
+    <string name="windy">Windy</string>
+
+    <!--  Current weather state in Vietnamese -->
+    <string name="cloudy_vietnamese">Nhiều mây</string>
+    <string name="rainy_vietnamese">Có mưa</string>
+    <string name="sunny_vietnamese">Nhiều nắng</string>
+    <string name="windy_vietnamese">Có gió</string>
 </resources>

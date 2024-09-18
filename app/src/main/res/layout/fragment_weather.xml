@@ -20,26 +20,30 @@
             android:layout_alignParentBottom="false"
             android:background="@drawable/cloudy"/>
         <LinearLayout
-            android:layout_width="86dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
                 android:id="@+id/textViewDegree"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/degree_location_1"/>
+                android:text="@string/degree_location_1"
+                android:textSize="25sp"/>
             <TextView
                 android:id="@+id/textViewWeatherContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/cloudy" />
+                android:text="@string/cloudy_vietnamese"
+                android:textSize="25sp"/>
         </LinearLayout>
         
         <TextView
             android:id="@+id/textViewLocation"
-            android:layout_width="81dp"
-            android:layout_height="41dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:gravity="end"
+            android:textSize="25sp"
             android:text="@string/location_1"/>
 
     </RelativeLayout>

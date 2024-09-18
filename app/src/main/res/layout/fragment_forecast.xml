@@ -21,11 +21,12 @@
             android:orientation="horizontal">
             <TextView
                 android:id="@+id/textView1_1"
-                android:layout_width="33dp"
+                android:layout_width="@dimen/text_width"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="@string/monday" />
+                android:text="@string/monday_vietnamese"
+                android:textSize="@dimen/text_font_size"/>
 
             <ImageView
                 android:id="@+id/imageView1"
@@ -43,7 +44,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="@string/tropical_cloudy_weather" />
+                android:text="@string/tropical_cloudy_weather"
+                android:textSize="@dimen/text_font_size"/>
         </LinearLayout>
 
         <!--Fragment which exhibits Hanoi's Tuesday weather-->
@@ -54,11 +56,12 @@
             android:orientation="horizontal">
             <TextView
                 android:id="@+id/textView2_1"
-                android:layout_width="33dp"
+                android:layout_width="@dimen/text_width"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="@string/tuesday" />
+                android:text="@string/tuesday_vietnamese"
+                android:textSize="@dimen/text_font_size"/>
             
             <ImageView
                 android:id="@+id/imageView2"
@@ -76,7 +79,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="@string/tropical_rainy_weather" />
+                android:text="@string/tropical_rainy_weather"
+                android:textSize="@dimen/text_font_size"/>
         </LinearLayout>
 
         <!--Fragment which exhibits Hanoi's Wednesday weather-->
@@ -87,15 +91,16 @@
             android:orientation="horizontal">
             <TextView
                 android:id="@+id/textView3_1"
-                android:layout_width="33dp"
+                android:layout_width="@dimen/text_width"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="@string/wednesday" />
+                android:text="@string/wednesday_vietnamese"
+                android:textSize="@dimen/text_font_size"/>
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="82dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:scaleX="1"
@@ -109,7 +114,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="@string/tropical_cloudy_weather" />
+                android:text="@string/tropical_cloudy_weather"
+                android:textSize="@dimen/text_font_size"/>
         </LinearLayout>
 
         <!--Fragment which exhibits Hanoi's Thursday weather-->
@@ -120,15 +126,17 @@
             android:orientation="horizontal">
             <TextView
                 android:id="@+id/textView4_1"
-                android:layout_width="33dp"
+                android:layout_width="@dimen/text_width"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="@string/thursday" />
+                android:text="@string/thursday_vietnamese"
+                android:textSize="@dimen/text_font_size" />
+
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="82dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:scaleX="1"
@@ -142,7 +150,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="@string/tropical_sunny_weather" />
+                android:text="@string/tropical_sunny_weather"
+                android:textSize="@dimen/text_font_size"/>
         </LinearLayout>
 
         <!--Fragment which exhibits Hanoi's Friday weather-->
@@ -153,15 +162,16 @@
             android:orientation="horizontal">
             <TextView
                 android:id="@+id/textView5_1"
-                android:layout_width="33dp"
+                android:layout_width="@dimen/text_width"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="@string/friday" />
+                android:text="@string/friday_vietnamese"
+                android:textSize="@dimen/text_font_size"/>
 
             <ImageView
                 android:id="@+id/imageView5"
-                android:layout_width="82dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:scaleX="1"
@@ -175,7 +185,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="@string/tropical_sunny_weather" />
+                android:text="@string/tropical_sunny_weather"
+                android:textSize="@dimen/text_font_size"/>
         </LinearLayout>
 
         <!--Fragment which exhibits Hanoi's Saturday weather-->
@@ -186,15 +197,16 @@
             android:orientation="horizontal">
             <TextView
                 android:id="@+id/textView6_1"
-                android:layout_width="33dp"
+                android:layout_width="@dimen/text_width"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="@string/saturday" />
+                android:text="@string/saturday_vietnamese"
+                android:textSize="@dimen/text_font_size"/>
 
             <ImageView
                 android:id="@+id/imageView6"
-                android:layout_width="82dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:scaleX="1"
@@ -208,7 +220,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="@string/tropical_rainy_weather" />
+                android:text="@string/tropical_rainy_weather"
+                android:textSize="@dimen/text_font_size"/>
         </LinearLayout>
 
         <!--Fragment which exhibits Hanoi's Sunday weather-->
@@ -219,15 +232,16 @@
             android:orientation="horizontal">
             <TextView
                 android:id="@+id/textView7_1"
-                android:layout_width="33dp"
+                android:layout_width="@dimen/text_width"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="@string/sunday" />
+                android:text="@string/sunday_vietnamese"
+                android:textSize="@dimen/text_font_size"/>
 
             <ImageView
                 android:id="@+id/imageView7"
-                android:layout_width="82dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:scaleX="1"
@@ -241,7 +255,8 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="@string/tropical_cloudy_weather" />
+                android:text="@string/tropical_cloudy_weather"
+                android:textSize="@dimen/text_font_size"/>
         </LinearLayout>
     </LinearLayout>
 
