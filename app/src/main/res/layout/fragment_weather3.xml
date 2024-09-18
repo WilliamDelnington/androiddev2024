@@ -2,8 +2,9 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="10dp"
+    android:background="@drawable/frame"
     tools:context=".WeatherFragment3">
 
     <!-- TODO: Update blank fragment layout -->
@@ -11,7 +12,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#B9CFBA">
+        android:layout_margin="20dp">
         <!--Main Image-->
         <ImageView
             android:id="@+id/imageViewMain2"
@@ -26,13 +27,13 @@
             android:orientation="vertical">
             <TextView
                 android:id="@+id/textViewDegree2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/degree_location_3"
                 android:textSize="25sp"/>
             <TextView
                 android:id="@+id/textViewWeatherContent2"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sunny_vietnamese"
                 android:textSize="25sp"/>
