@@ -58,4 +58,8 @@
     <string name="rainy_vietnamese">Có mưa</string>
     <string name="sunny_vietnamese">Nhiều nắng</string>
     <string name="windy_vietnamese">Có gió</string>
+
+    <string name="refresh">Refresh</string>
+    <string name="search">Search</string>
+    <string name="settings">Settings</string>
 </resources>

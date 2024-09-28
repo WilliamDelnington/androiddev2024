@@ -1,17 +1,25 @@
 package vn.edu.usth.weather;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
@@ -30,6 +38,7 @@ import java.io.InputStream;
 public class WeatherActivity extends AppCompatActivity {
     private MediaPlayer mediaPlayer;
     private static final String TAG = "WeatherActivity";
+    private static final String SERVER_RESPONSE = "server_response";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,8 +58,15 @@ public class WeatherActivity extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         tabLayout.setupWithViewPager(pager);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
+
+        setSupportActionBar(toolbar);
+
+        toolbar.showOverflowMenu();
+
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
+            Log.i(TAG, "Permission Denied");
             ActivityCompat.requestPermissions(
                     this,
                     new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
@@ -135,6 +151,31 @@ public class WeatherActivity extends AppCompatActivity {
                 Log.e("Play Error", e.getMessage());
             }
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.out_menu, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        int duration = Toast.LENGTH_LONG;
+        CharSequence refreshToast = "Refreshing";
+
+        if (id == R.id.refresh_toolbar) {
+            Toast.makeText(getBaseContext(), refreshToast, duration).show();
+            return true;
+        } else if (id == R.id.setting_toolbar) {
+            Intent prefActivityIntent = new Intent(this, PrefActivity.class);
+            startActivity(prefActivityIntent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
