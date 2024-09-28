@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="10dp"
-    android:background="@drawable/frame"
+    android:background="#d4d6d5"
     tools:context=".WeatherFragment3">
 
     <!-- TODO: Update blank fragment layout -->
