@@ -62,4 +62,7 @@
     <string name="refresh">Refresh</string>
     <string name="search">Search</string>
     <string name="settings">Settings</string>
+
+    <string name="refresh_message">Refreshing...</string>
+    <string name="fetch_success">Fetched Successfully</string>
 </resources>

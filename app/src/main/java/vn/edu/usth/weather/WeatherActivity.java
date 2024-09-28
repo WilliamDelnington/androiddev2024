@@ -164,10 +164,34 @@ public class WeatherActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         int duration = Toast.LENGTH_LONG;
-        CharSequence refreshToast = "Refreshing";
 
         if (id == R.id.refresh_toolbar) {
-            Toast.makeText(getBaseContext(), refreshToast, duration).show();
+            Handler handler = new Handler(Looper.getMainLooper()) {
+              @Override
+              public void handleMessage(Message msg) {
+                  String content = msg.getData().getString(SERVER_RESPONSE);
+                  Toast.makeText(getBaseContext(), content, duration).show();
+              }
+            };
+            Thread t = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                    Bundle bundle = new Bundle();
+                    bundle.putString(SERVER_RESPONSE, getString(R.string.fetch_success));
+
+                    Message msg = new Message();
+                    msg.setData(bundle);
+                    handler.sendMessage(msg);
+                }
+            });
+            t.start();
+            Toast.makeText(getBaseContext(), R.string.refresh_message, Toast.LENGTH_LONG).show();
             return true;
         } else if (id == R.id.setting_toolbar) {
             Intent prefActivityIntent = new Intent(this, PrefActivity.class);
