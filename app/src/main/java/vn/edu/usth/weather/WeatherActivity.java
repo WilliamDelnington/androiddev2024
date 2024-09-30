@@ -233,6 +233,7 @@ public class WeatherActivity extends AppCompatActivity {
 
 
             task = new CustomAsyncTask(getBaseContext());
+
             task.execute("https://usth.edu.vn/wp-content/uploads/2021/11/logo.png");
         } else if (id == R.id.setting_toolbar) {
             Intent prefActivityIntent = new Intent(this, PrefActivity.class);
@@ -278,10 +279,6 @@ public class WeatherActivity extends AppCompatActivity {
         if (mediaPlayer != null) {
             mediaPlayer.release();
             mediaPlayer = null;
-        }
-
-        if (task != null) {
-            task.cancel(true);
         }
 
         Log.i(TAG, "App Destroy");
