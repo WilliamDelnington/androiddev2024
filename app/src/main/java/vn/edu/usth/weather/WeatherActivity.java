@@ -1,9 +1,12 @@
 package vn.edu.usth.weather;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.media.MediaPlayer;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -34,11 +37,45 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.ref.WeakReference;
 
 public class WeatherActivity extends AppCompatActivity {
     private MediaPlayer mediaPlayer;
     private static final String TAG = "WeatherActivity";
     private static final String SERVER_RESPONSE = "server_response";
+    private static AsyncTask<String, Integer, Bitmap> task;
+    private static int duration;
+
+    private static class CustomAsyncTask extends AsyncTask<String, Integer, Bitmap> {
+        private WeakReference<Context> contextWeakReference;
+
+        public CustomAsyncTask(Context context) {
+            contextWeakReference = new WeakReference<>(context);
+        }
+
+        @Override
+        protected Bitmap doInBackground(String... strings) {
+            Thread t = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            t.start();
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap bitmap) {
+            Toast.makeText(contextWeakReference.get().getApplicationContext(), R.string.refresh_message, duration).show();
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -163,36 +200,40 @@ public class WeatherActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        int duration = Toast.LENGTH_LONG;
+        duration = Toast.LENGTH_LONG;
 
         if (id == R.id.refresh_toolbar) {
-            Handler handler = new Handler(Looper.getMainLooper()) {
-              @Override
-              public void handleMessage(Message msg) {
-                  String content = msg.getData().getString(SERVER_RESPONSE);
-                  Toast.makeText(getBaseContext(), content, duration).show();
-              }
-            };
-            Thread t = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+//            Handler handler = new Handler(Looper.getMainLooper()) {
+//              @Override
+//              public void handleMessage(Message msg) {
+//                  String content = msg.getData().getString(SERVER_RESPONSE);
+//                  Toast.makeText(getBaseContext(), content, duration).show();
+//              }
+//            };
+//            Thread t = new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    try {
+//                        Thread.sleep(1000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                    Bundle bundle = new Bundle();
+//                    bundle.putString(SERVER_RESPONSE, getString(R.string.fetch_success));
+//
+//                    Message msg = new Message();
+//                    msg.setData(bundle);
+//                    handler.sendMessage(msg);
+//                }
+//            });
+//            t.start();
+//            Toast.makeText(getBaseContext(), R.string.refresh_message, Toast.LENGTH_LONG).show();
+//            return true;
 
-                    Bundle bundle = new Bundle();
-                    bundle.putString(SERVER_RESPONSE, getString(R.string.fetch_success));
 
-                    Message msg = new Message();
-                    msg.setData(bundle);
-                    handler.sendMessage(msg);
-                }
-            });
-            t.start();
-            Toast.makeText(getBaseContext(), R.string.refresh_message, Toast.LENGTH_LONG).show();
-            return true;
+            task = new CustomAsyncTask(getBaseContext());
+            task.execute("https://usth.edu.vn/wp-content/uploads/2021/11/logo.png");
         } else if (id == R.id.setting_toolbar) {
             Intent prefActivityIntent = new Intent(this, PrefActivity.class);
             startActivity(prefActivityIntent);
@@ -237,6 +278,10 @@ public class WeatherActivity extends AppCompatActivity {
         if (mediaPlayer != null) {
             mediaPlayer.release();
             mediaPlayer = null;
+        }
+
+        if (task != null) {
+            task.cancel(true);
         }
 
         Log.i(TAG, "App Destroy");
