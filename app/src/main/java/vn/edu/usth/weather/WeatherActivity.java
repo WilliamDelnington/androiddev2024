@@ -1,10 +1,12 @@
 package vn.edu.usth.weather;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -38,6 +40,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class WeatherActivity extends AppCompatActivity {
     private MediaPlayer mediaPlayer;
@@ -47,10 +51,11 @@ public class WeatherActivity extends AppCompatActivity {
     private static int duration;
 
     private static class CustomAsyncTask extends AsyncTask<String, Integer, Bitmap> {
-        private WeakReference<Context> contextWeakReference;
+        private final WeakReference<Activity> activityWeakReference;
+        private Bitmap bitmap;
 
-        public CustomAsyncTask(Context context) {
-            contextWeakReference = new WeakReference<>(context);
+        public CustomAsyncTask(Activity activity) {
+            activityWeakReference = new WeakReference<>(activity);
         }
 
         @Override
@@ -67,12 +72,39 @@ public class WeatherActivity extends AppCompatActivity {
             });
             t.start();
 
-            return null;
+            try {
+                URL url = new URL(strings[0]);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setRequestMethod("GET");
+                httpURLConnection.setDoInput(true);
+                httpURLConnection.connect();
+
+                int response = httpURLConnection.getResponseCode();
+                Log.i("USTH Weather", String.format("Response Code: %d", response));
+                InputStream inputStream = httpURLConnection.getInputStream();
+
+                bitmap = BitmapFactory.decodeStream(inputStream);
+                inputStream.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            return bitmap;
         }
 
         @Override
         protected void onPostExecute(Bitmap bitmap) {
-            Toast.makeText(contextWeakReference.get().getApplicationContext(), R.string.refresh_message, duration).show();
+            Activity activity = activityWeakReference.get();
+            Toast.makeText(activity, R.string.refresh_message, duration).show();
+            if (bitmap != null) {
+                ImageView imageView = activity.findViewById(R.id.logo);
+                imageView.setImageBitmap(bitmap);
+
+                Toast.makeText(activity, "Image Is Set", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(activity, "Failed To Load Image", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
@@ -231,10 +263,9 @@ public class WeatherActivity extends AppCompatActivity {
 //            Toast.makeText(getBaseContext(), R.string.refresh_message, Toast.LENGTH_LONG).show();
 //            return true;
 
+            task = new CustomAsyncTask(this);
 
-            task = new CustomAsyncTask(getBaseContext());
-
-            task.execute("https://usth.edu.vn/wp-content/uploads/2021/11/logo.png");
+            task.execute("https://cdn.haitrieu.com/wp-content/uploads/2022/11/Logo-Truong-Dai-hoc-Khoa-hoc-va-Cong-nghe-Ha-Noi.png");
         } else if (id == R.id.setting_toolbar) {
             Intent prefActivityIntent = new Intent(this, PrefActivity.class);
             startActivity(prefActivityIntent);

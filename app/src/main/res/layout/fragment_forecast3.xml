@@ -7,6 +7,12 @@
     android:background="#B9E1E6"
     tools:context=".ForecastFragment3">
 
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/refresh_message" />
+
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
